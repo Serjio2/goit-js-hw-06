@@ -3,16 +3,12 @@ const listEl = document.querySelector("#categories");
 
 console.log(`Number of categories : ${listEl.children.length}`);
 
-// console.log(listEl.children)
-// console.log(itemsEl)
 
-const titleEl = listEl.children;
-console.log(titleEl);
+const titleEl = document.querySelectorAll("li.item");
+titleEl.forEach(elem => {
+    console.log( `Category: ${elem.firstElementChild.textContent}`)
+    console.log( `Elements: ${elem.lastElementChild.children.length}`)
+});
 
-// titleEl.forEach( element => 
-//     console.log(element.children.textContent))
 
-// const titleEl = document.querySelectorAll("h2");
-// titleEl.forEach(elem => console.log(elem.textContent))
-// console.log(titleEl);
 
