@@ -8,19 +8,17 @@ const ingredients = [
 ];
 
 const listIngridientsEl = document.querySelector("#ingredients");
-// console.log(listIngridientsEl);
 
-const itemIngredientsEl = document.createElement("li");
+const createListEl = ingredients.map( (element) => {
+  const itemIngredientsEl = document.createElement("li");
+  itemIngredientsEl.textContent = element;
+  itemIngredientsEl.classList.add("item");
 
-// for (const ingredient of ingredients) {
+  // console.log(itemIngredientsEl);
+  return itemIngredientsEl;
+})
 
-itemIngredientsEl.textContent = ingredients;
-itemIngredientsEl.className = "item";
-// };
+listIngridientsEl.append(...createListEl);
 
-// console.log(itemIngredientsEl)
 
-listIngridientsEl.append(itemIngredientsEl);
-
-console.log(listIngridientsEl);
 
