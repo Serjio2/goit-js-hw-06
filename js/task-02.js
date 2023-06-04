@@ -20,5 +20,5 @@ const createListEl = ingredients.map( (element) => {
 
 listIngridientsEl.append(...createListEl);
 
-
+// console.log(listIngridientsEl);
 
