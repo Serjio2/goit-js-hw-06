@@ -7,7 +7,7 @@ const textSpanEl = document.querySelector("#text");
 // console.log(textSpanEl.style.fontSize = "30px");
 
 fontSizeControlEl.addEventListener("change", (event) => {
-    console.log(event.target.valueAsNumber)
+    // console.log(event.target.valueAsNumber)
     textSpanEl.style.fontSize = event.target.valueAsNumber + "px";
 } )
 
