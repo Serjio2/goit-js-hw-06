@@ -2,12 +2,18 @@ const inputNameEl = document.querySelector('#name-input');
 
 const spanNameEl = document.querySelector('#name-output');
 
-spanNameEl.textContent = "Anonymous"
 
 inputNameEl.addEventListener('input', (event) => {
 // console.log(event.target.value)
+if (!event.target.value.trim()) {
+    spanNameEl.textContent = "Anonymous";
 
-spanNameEl.textContent = event.target.value.trim()});
+    // console.log(event.target.value)
+    return;
+}
+
+spanNameEl.textContent = event.target.value});
 
 // console.log(inputNameEl.value);
 // console.log(spanNameEl);
+
