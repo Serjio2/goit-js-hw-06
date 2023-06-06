@@ -19,21 +19,37 @@ const boxesDiv = document.querySelector("#boxes");
 // console.log(destroyBtnEl);
 // console.log(boxesDiv);
 
-createBtnEl.addEventListener("click", () => {
-  const numberDivs = document.createElement("div");
-  inputDivEl.map((value) => numberDivs(value));
-  numberDivs.style.width = "30px";
-  numberDivs.style.height = "30px";
-  numberDivs.style.backgroundColor = "red";
+// const amount = inputDivEl.value;
+// console.log(amount); 
 
-  console.log(inputDivEl.value);
+createBtnEl.addEventListener("click", (event) => {
+  
+const amount = inputDivEl.value;
+
+console.log(amount);
+
+  // const numberDivs = document.createElement("div");
+  // // inputDivEl.map((value) => numberDivs(value));
+  // const divWidth = numberDivs.style.width = "30px";
+  // const divHeight = numberDivs.style.height = "30px";
+  // const divBackground = numberDivs.style.backgroundColor = getRandomHexColor();
+
+  console.log(inputDivEl);
+
+  for (let i = 0; i <= amount; i += 1) {
+    const numberDivs = document.createElement("div");
+    // inputDivEl.map((value) => numberDivs(value));
+    const divWidth = numberDivs.style.width = "30px";
+    const divHeight = numberDivs.style.height = "30px";
+    const divBackground = numberDivs.style.backgroundColor = getRandomHexColor();
+  }
 
 
   boxesDiv.insertAdjacentElement("beforeend", numberDivs);
   
   // console.log(inputDivEl.value);
   // console.log(numberDivs);
-  console.log(boxesDiv)
+  // console.log(boxesDiv)
 } )
 
 // console.log(document)
