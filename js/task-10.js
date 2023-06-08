@@ -11,13 +11,6 @@ const destroyBtnEl = controlsDivEl.lastElementChild;
 
 const boxesDiv = document.querySelector('#boxes');
 
-// console.log(controlsDivEl);
-console.log(inputDivEl);
-// console.log(createBtnEl);
-// console.log(destroyBtnEl);
-
-// console.log(boxesDiv);
-
 createBtnEl.addEventListener('click', createBoxes);
 destroyBtnEl.addEventListener('click', destroyBoxes);
 
@@ -25,26 +18,24 @@ destroyBtnEl.addEventListener('click', destroyBoxes);
 function createBoxes(amount) {
  amount = inputDivEl.value;
 
-    let newBoxesEl = document.createElement('div');
-    let boxWidth = newBoxesEl.style.width = '30px';
-    let boxHeight = newBoxesEl.style.height = '30px';
-    const boxColor = newBoxesEl.style.backgroundColor = getRandomHexColor();
-  // console.log("Hi");
+  let size = 30;
 
   for (let i = 0; i < amount; i += 1) {
-    newBoxesEl = document.createElement('div');
-    boxWidth += 10;
-    // boxHeight += "10px";
-    // boxColor = getRandomHexColor();
-    console.log(boxWidth);
-
+    const newBoxes = document.createElement('div')
+    newBoxes.classList.add("box-element");
+    newBoxes.style.width = size + "px";
+    newBoxes.style.height = size + "px";
+    newBoxes.style.backgroundColor = getRandomHexColor();
+    size += 10;
+    boxesDiv.append(newBoxes);
   }
-  console.log(newBoxesEl)
-  boxesDiv.append(newBoxesEl);
-
+  // console.log(boxesDiv)
 }
 
 function destroyBoxes() {
-  boxesDiv.remove();
-  console.log(boxesDiv);
+
+  boxesDiv.innerHTML = "";
+  // boxesDiv.remove(".box-element");
+  // console.log(boxesDiv);
   }
+ 
