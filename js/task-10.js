@@ -4,58 +4,47 @@ function getRandomHexColor() {
     .padStart(6, 0)}`;
 }
 
-
-const controlsDivEl = document.querySelector("#controls");
+const controlsDivEl = document.querySelector('#controls');
 const inputDivEl = controlsDivEl.firstElementChild;
 const createBtnEl = inputDivEl.nextElementSibling;
 const destroyBtnEl = controlsDivEl.lastElementChild;
 
-const boxesDiv = document.querySelector("#boxes");
-
+const boxesDiv = document.querySelector('#boxes');
 
 // console.log(controlsDivEl);
-// console.log(inputDivEl.number);
+console.log(inputDivEl);
 // console.log(createBtnEl);
 // console.log(destroyBtnEl);
+
 // console.log(boxesDiv);
 
-// const amount = inputDivEl.value;
-// console.log(amount); 
+createBtnEl.addEventListener('click', createBoxes);
+destroyBtnEl.addEventListener('click', destroyBoxes);
 
-createBtnEl.addEventListener("click", (event) => {
-  
-const amount = inputDivEl.value;
 
-console.log(amount);
+function createBoxes(amount) {
+ amount = inputDivEl.value;
 
-  // const numberDivs = document.createElement("div");
-  // // inputDivEl.map((value) => numberDivs(value));
-  // const divWidth = numberDivs.style.width = "30px";
-  // const divHeight = numberDivs.style.height = "30px";
-  // const divBackground = numberDivs.style.backgroundColor = getRandomHexColor();
+    let newBoxesEl = document.createElement('div');
+    let boxWidth = newBoxesEl.style.width = '30px';
+    let boxHeight = newBoxesEl.style.height = '30px';
+    const boxColor = newBoxesEl.style.backgroundColor = getRandomHexColor();
+  // console.log("Hi");
 
-  console.log(inputDivEl);
+  for (let i = 0; i < amount; i += 1) {
+    newBoxesEl = document.createElement('div');
+    boxWidth += 10;
+    // boxHeight += "10px";
+    // boxColor = getRandomHexColor();
+    console.log(boxWidth);
 
-  for (let i = 0; i <= amount; i += 1) {
-    const numberDivs = document.createElement("div");
-    // inputDivEl.map((value) => numberDivs(value));
-    const divWidth = numberDivs.style.width = "30px";
-    const divHeight = numberDivs.style.height = "30px";
-    const divBackground = numberDivs.style.backgroundColor = getRandomHexColor();
   }
+  console.log(newBoxesEl)
+  boxesDiv.append(newBoxesEl);
 
+}
 
-  boxesDiv.insertAdjacentElement("beforeend", numberDivs);
-  
-  // console.log(inputDivEl.value);
-  // console.log(numberDivs);
-  // console.log(boxesDiv)
-} )
-
-// console.log(document)
-
-
-
-// function createBoxes(amount) {
-//   console.log(inputDivEl);
-// }
+function destroyBoxes() {
+  boxesDiv.remove();
+  console.log(boxesDiv);
+  }
